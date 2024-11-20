@@ -1,0 +1,91 @@
+@host=http://localhost:3000
+
+//API/POSTS
+
+//OBTENER TODOS LOS POSTS------------------------
+GET {{host}}/api/posts
+
+//OBTENER POST POR ID---------------------------
+###
+GET {{host}}/api/posts/12
+//CREAR POST------------------------------------
+###
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+"titulo":"Doce post",
+"descripcion":"Contenido del Doce post",
+"categoria":"Economia",
+"id_autors":"6"
+}
+
+//ACTUALIZAR POST---------------------------------
+###
+PUT {{host}}/api/posts/5
+Content-Type: application/json
+
+{
+"titulo":"Quinto post corregido segunda",
+"descripcion":"Contenido del quinto post corregido segunda",
+"categoria":"Terror",
+"id_autors":"2"
+}
+
+//DELETE POST--------------------------------------
+###
+DELETE {{host}}/api/posts/12
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+###
+//API/AUTORS
+//OBTENER TODOS LOS AUTORES--------------------------
+GET {{host}}/api/autors
+
+//OBTENER AUTOR POR ID-------------------------------
+###
+GET {{host}}/api/autors/4
+
+//OBTENER POSTS POR AUTORID--------------------------
+###
+GET {{host}}/api/autors/6/posts
+
+
+//FILTRA POSTS POR AUTORID Y CATEGORIA--------------
+###
+GET {{host}}/api/autors/6/economia
+
+//CREAR AUTOR --------------------------------------
+###
+POST {{host}}/api/autors
+Content-Type: application/json
+
+{
+"nombre":"Andres Yepez",
+"email":"andres@gmail.com",
+"imagen":"andres.jpg"
+}
+
+//ACTUALIZAR AUTOR POR ID-------------------------------
+###
+PUT {{host}}/api/autors/3
+Content-Type: application/json
+
+{
+"nombre":"Jairo Haro",
+"email":"jairo@gmail.com",
+"imagen":"jairoACTUALIZADO.jpg"
+}
+
+//ELIMINAR AUTOR POR ID-------------------------------
+###
+DELETE {{host}}/api/autors/3
+
+
